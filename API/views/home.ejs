@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Bloggy</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Bloggy</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">All Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Special Posts</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/logout">Logout</a></li>
+                    <li id="id" value="<%= id %>" hidden></li>
+                    <li id="name" class="username" value="<%= name %>" hidden><%= name %></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Bloggy</h1>
+                        <span class="subheading">The best blogs on bloggy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div id="refresh" class="col-md-10 col-lg-8 col-xl-7">
+                <div style="margin-left: auto; margin-right: auto; width: 30%;">
+                    <!-- button -->
+                    <button id="addBlogButton" type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">
+                        New Blog
+                    </button>
+                </div>
+                <!-- Post preview-->
+                <div id="lol" class="post-preview">
+                </div>
+                <!-- Pager-->
+                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older
+                        Posts →</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Show on modal on click -->
+    <div id="AddBlogModal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Blog</h5>
+                    <button id="cancelx" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="AddBlogForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="BlogName">Blog Title</label>
+                            <input type="text" class="form-control rounded-0" id="BlogName"></input>
+                            <label for="BlogContent">Blog Content</label>
+                            <textarea class="form-control rounded-0" id="BlogContent" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cancel" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; Bloggy 2022</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.0.2/dist/sweetalert2.all.min.js"></script>
+    <!-- ajax -->
+    <script>
+        $(document).ready(function () {
+            let url = '/api/blog/';
+            var id = document.getElementById("id").value; //user id
+            var name = $("#name").text();
+
+            $.ajax({
+                url: url,
+                method: 'get',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    data: id,
+                    data: "blogName",
+                    data: "blogContent"
+                }),
+                success: function (data) {
+                    var size = Object.keys(data).length;
+
+                    for (let i = size - 1; i > size - 11 || i == 0; i--) {
+                        var blog_info = data[i].blog_info;
+
+                        if (blog_info.length > 70)
+                            blog_info.substring(0, 70);
+                        // create entries for each blog
+                        $('#lol').append(
+                            '<div style="display: flex" class="post-preview" ><div style="width: 50%" ><a href="post.html"><h2 class="post-title">' +
+                            data[i].blog_name +
+                            '</h2><h3 class="post-subtitle" style="font-weight: 650;">' +
+                            blog_info +
+                            '</h3></a><p class="post-meta">Posted by <a href="#!">' + name +
+                            ' </a>on ' + (data[i].blog_date).substring(0, 10) +
+                            '</p></div><div style="width:50%;align-items: center; justify-content: center;"><button id="edit" style="position: relative; top: 35%; left: 50%;" type="button" class="btn btn-outline-secondary edit" value="' +
+                            data[i].id +
+                            '">Edit</button><button style="position: relative; top: 35%; left: 50%;" type="button" class="btn btn-outline-danger delete" value="' +
+                            data[i].id + '">Delete</button></div></div><hr class="my-4"/>'
+                        );
+                    }
+                }
+            });
+
+            $("#addBlogButton").click(function () {
+                option = "create";
+                $('#AddBlogModal').modal('show');
+            });
+
+            $(document).on("click", ".edit", function () {
+                option = "update";
+                id = $(this).val();
+
+                $('#AddBlogModal').modal('show');
+
+            });
+
+            $("#cancel").click(function () {
+                $('#AddBlogModal').modal('hide');
+            });
+            $("#cancelx").click(function () {
+                $('#AddBlogModal').modal('hide');
+            });
+
+            $('#AddBlogForm').submit(function (e) {
+                e.preventDefault();
+                blogName = $.trim($('#BlogName').val());
+                blogContent = $.trim($('#BlogContent').val());
+
+                // send query to index.js to create new blog
+                if (option == "create") {
+                    $.ajax({
+                        url: url,
+                        method: 'post',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            id: id,
+                            blogname: blogName,
+                            blogcontent: blogContent
+                        }),
+                        success: function (data) {
+                            location.reload();
+                        }
+                    });
+                }
+                // send query to index.js to upadate selected blog
+                if (option == "update") {
+                    $.ajax({
+                        url: url + id,
+                        method: 'put',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            id: id,
+                            blogname: blogName,
+                            blogcontent: blogContent
+                        }),
+                        success: function (data) {
+                            setTimeout(() => {
+                                location.reload();
+                            }, 1000);
+                        }
+                    });
+                }
+                $('#AddBlogModal').modal('hide');
+            });
+            //DELETE client
+            $(document).on("click", ".delete", function () {
+                id = $(this).val(); //blog id
+
+                Swal.fire({
+                    title: 'Do you want to delete the selected blog?',
+                    showCancelButton: true,
+                    confirmButtonText: `Confirm`,
+                    cancelButtonText: `Cancel`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: url + id,
+                            method: 'delete',
+                            data: {
+                                id: id
+                            },
+                            success: function (data) {
+                                setTimeout(() => {
+                                    location.reload();
+                                }, 1500);
+                            }
+                        });
+                        Swal.fire('Blog deleted!', '', 'success')
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>
